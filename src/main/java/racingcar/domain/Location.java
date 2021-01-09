@@ -1,13 +1,17 @@
 package racingcar.domain;
 
+import racingcar.exception.InvalidLocationException;
+
 import java.util.Objects;
 
 public class Location {
+    private static final int MIN_LOCATION = 0;
     private int location;
 
+
     public Location(int location) {
-        if (location < 0) {
-            location = 0;
+        if (location < MIN_LOCATION) {
+            throw new InvalidLocationException();
         }
         this.location = location;
     }

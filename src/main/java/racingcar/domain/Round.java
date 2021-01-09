@@ -5,10 +5,11 @@ import racingcar.exception.InvalidRoundLengthException;
 import java.util.Objects;
 
 public class Round {
+    private static final int INVALID_ROUND = 1;
     private int round;
 
     public Round(int round) {
-        if (round < 1) {
+        if (round < INVALID_ROUND) {
             throw new InvalidRoundLengthException();
         }
         this.round = round;
